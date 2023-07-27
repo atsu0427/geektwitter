@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag 'new', :media => "all" %>
+
+<div class="tweets-container">
+ <div class="img">
+  <%= image_tag 'twitterロゴ.png' %>
+ </div>
+
+  <p>GeekTwitterにログイン</p>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :メール %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :パスワード %><br />
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.submit "Log in" %></br>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+  </div>
+</div>
